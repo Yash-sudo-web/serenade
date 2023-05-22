@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* background-image: radial-gradient(circle, #051937, #081734, #0a1631, #0b142f, #0d122c, #0e1029, #0f0e27, #0f0c24, #0f0921, #0e061f, #0d031c, #0c001a); radial */
+  /* background-image: linear-gradient(to top, #051937, #081734, #0a1631, #0b142f, #0d122c, #0e1029, #0f0e27, #0f0c24, #0f0921, #0e061f, #0d031c, #0c001a); Linear to top*/
+  background-image: linear-gradient(to bottom, #051937, #081734, #0a1631, #0b142f, #0d122c, #0e1029, #0f0e27, #0f0c24, #0f0921, #0e061f, #0d031c, #0c001a);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
