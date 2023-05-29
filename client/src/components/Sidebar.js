@@ -1,5 +1,6 @@
 import React from 'react'
-
+import {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo-no-background.png';
 import famusic from '../assets/faMusic.png';
 import fahome from '../assets/faHome.png';
@@ -12,6 +13,18 @@ import falogout from '../assets/faLogout.png';
 
 
 export const Sidebar = () => {
+  const navigate = useNavigate();
+  const [loggedIn, setLoggedIn] = useState(!localStorage.getItem('token'));
+  
+  const logout = () => {
+  
+    if(window.confirm("Are you sure you want to log out?")===true){
+      localStorage.removeItem('token');
+      setLoggedIn(false);
+      navigate('/login');
+    }
+  };
+
   return (
     <div className='flex flex-row'>
     <div className='justify-start min-h-screen w-3/20 backdrop-blur-3xl'>
@@ -60,13 +73,14 @@ export const Sidebar = () => {
       <img src={fasettings} alt="logo" width={29} height={29} />
       <p className='hover:text-red-700 cursor-pointer'>Settings</p>
     </li>
+    <button onClick={logout}>
     <li className='flex flex-row gap-5 items-center hover:bg-[#0c001a] cursor-pointer'>
       <img src={falogout} alt="logo" />
       <p className='hover:text-red-700 cursor-pointer'>Logout</p>
     </li>
+    </button>
   </ul>
     </div>
-
 
     </div>
     <div className='border-l-2 min-h-screen left-1/5 border-black'></div>
